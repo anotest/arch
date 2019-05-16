@@ -21,8 +21,8 @@ t
 w
 EOF
 setup_LVM() {
-  cryptsetup luksFormat /dev/sda2
-  cryptsetup open --type luks /dev/sda2 lvm
+  cryptsetup luksFormat /dev/sda1
+  cryptsetup open --type luks /dev/sda1 lvm
   pvcreate /dev/mapper/lvm
   vgcreate volgroup0 /dev/mapper/lvm
   lvcreate -L 3GB volgroup0 -n lv_root
