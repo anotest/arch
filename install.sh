@@ -40,7 +40,6 @@ mkfs.ext4 /dev/volgroup0/lv_home
 
 mount /dev/volgroup0/lv_root /mnt 
 mkdir /mnt/boot
-mount /dev/sda1 /mnt/boot
-
+mount /dev/sda2 /mnt/boot
 mkdir /mnt/home 
 mount /dev/volgroup0/lv_home /mnt/home 
