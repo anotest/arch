@@ -43,3 +43,13 @@ mkdir /mnt/boot
 mount /dev/sda2 /mnt/boot
 mkdir /mnt/home 
 mount /dev/volgroup0/lv_home /mnt/home 
+pacstrap -i /mnt base base-devel
+genfstab -U -p /mnt >> /mnt/etc/fstab
+config(){
+    rm -rf /mnt/root/config.sh
+    wget https://raw.githubusercontent.com/anotest/arch/master/config.sh -O /mnt/root/config.sh
+    chmod +x /mnt/root/config.sh
+    arch-chroot /mnt /root/config.sh $ROOT $boot
+}
+
+config
