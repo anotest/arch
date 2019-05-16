@@ -33,3 +33,4 @@ setup_LVM() {
  vgchange -ay
 
 }
+setup_LVM
