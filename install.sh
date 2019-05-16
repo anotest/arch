@@ -20,7 +20,7 @@ t
 8e
 w
 EOF
-setup_LVM {
+setup_LVM() {
   cryptsetup luksFormat /dev/sda2
   cryptsetup open --type luks /dev/sda2 lvm
   pvcreate /dev/mapper/lvm
